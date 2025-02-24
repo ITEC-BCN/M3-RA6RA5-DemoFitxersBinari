@@ -1,11 +1,11 @@
 package itb
 
-import itb.models.GestorPersones
+import itb.controllers.*
 import itb.models.Persona
 
 fun main() {
 
-    val gestor = GestorPersones("./txt/persones.dat")
+    val fitxer: String = "./txt/persones.dat"
 
     var sortir: Boolean = false
 
@@ -21,10 +21,10 @@ fun main() {
                 val nom = readln()
                 print("Introdueix el mail: ")
                 val mail = readln()
-                gestor.afegirPersona(Persona(nom, mail))
+                afegirPersona(fitxer, Persona(nom, mail))
             }
             "2" -> {
-                val persones = gestor.llegirPersones()
+                val persones = llegirPersones(fitxer)
                 if (persones.isEmpty()) println("No hi ha persones guardades.")
                 else persones.forEach {
                     println(it)
