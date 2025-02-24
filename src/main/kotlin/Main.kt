@@ -5,7 +5,7 @@ import itb.models.Persona
 
 fun main() {
 
-    val fitxer: String = "./txt/persones.dat"
+    val fitxer: String = "./txt/persones.bin"
 
     var sortir: Boolean = false
 
